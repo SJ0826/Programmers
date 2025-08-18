@@ -17,11 +17,12 @@ function solution(s) {
         // 3. 나머지 배열에 동일한 문자가 있는지 찾고 있다면 인덱스를 이용해 숫자를 구한다.
         for(let j = i - 1; j >=0; j--) {
             if(array[j] === rear) {
-                // 4. answer 배열에 확인한 숫자를 앞에서 부터 쌓는다. (unshift)
+                // 4. 같은 문자가 있을경우 인덱스의 차를 answer에 추가한다. (unshift)
                 answer.unshift(i - j);
                 break;
             } 
             
+            // 4-1. 같은 문자가 없다면 -1. (unshift)
             if(j === 0) {
                 answer.unshift(-1);
             }
